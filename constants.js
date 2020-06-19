@@ -1,0 +1,1 @@
+// is where we put the configurations and rules of the game
