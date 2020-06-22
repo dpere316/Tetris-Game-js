@@ -57,13 +57,13 @@
     padding:15px 30px;
 }
 
-#canvas{
+#gameboard{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#canvas canvas{
+#gameboard canvas{
 
     border: 1px solid red;
 
