@@ -1,1 +1,3 @@
-// board logic
+class board {
+    
+}

@@ -1,1 +1,3 @@
-// is for piece logic.
+class pieces{
+    constructor()
+}
