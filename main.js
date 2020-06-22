@@ -3,7 +3,7 @@
 const canvas = document.querySelector('#canvas')
 const ctx = canvas.getContext("2d")
 
-// I need a function to randomly select game piece
+// Function to randomly select game piece
 function randomElement(array)
 {
     return piece = array[Math.floor(Math.random() * PIECES.length)];
@@ -16,12 +16,13 @@ function movement()
 }
 
 // I need a function that fills in the pieces with a color
-function fillPiece(piece, color)
+function fillPiece()
 {
-
+    
 }
 
-// I need collision detection
+
+// I need collision detection for the (left and right wall) and for game pieces
 
 
 // This creates a red block
