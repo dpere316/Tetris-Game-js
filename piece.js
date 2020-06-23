@@ -153,14 +153,7 @@ const O = [
 
   ];
 
-  const PIECES = [
-    [Z,"red"],
-    [S,"green"],
-    [T,"yellow"],
-    [O,"blue"],
-    [L,"purple"],
-    [I,"cyan"],
-    [J,"orange"]
-  ];
+ 
   
-  const block = 20; // one block in the grid is 20px by 20px
+
+ 

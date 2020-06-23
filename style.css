@@ -5,6 +5,9 @@
     src: url("/Users/danielperez/Library/Fonts/AerologicaRegular-K7day.ttf"), format("truetype")
 }
 
+body{
+    overflow: hidden;
+}
 #title {
     display: flex;
     justify-content: space-evenly;
