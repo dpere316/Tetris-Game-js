@@ -14,8 +14,8 @@ const PIECES =
 }
 
 // Function to randomly select game piece
-function randomElement(array) {
-    return piece = PIECES.shape[Math.floor(Math.random() * PIECES.shape.length)];
+function randomElement() {
+    return PIECES.shape[Math.floor(Math.random() * PIECES.shape.length)];
 }
 
 // Function that fills block
@@ -41,6 +41,8 @@ function drawPieces() {
         })
     })
 }
+
+
 
 
 // Function that adds gamePiece to board
@@ -74,6 +76,7 @@ function detectCollision(){
 
 //Keyboard controls
 document.addEventListener('keydown', function (event) {
+    
     switch (event.key) {
         case "ArrowLeft":
            if(all[0].x - 20 >= 0) 
@@ -88,7 +91,12 @@ document.addEventListener('keydown', function (event) {
             }   
             break
         case "ArrowUp":
-            all[0].direction = all[0].direction + 1
+            if(all[0].direction + 1 < all[0].piece.length){
+                all[0].direction++
+            }
+            else{
+                all[0].direction = 0
+            }
             break
         case "ArrowDown":
             all[0].y += 20
