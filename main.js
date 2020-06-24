@@ -30,10 +30,41 @@ function fillBlock(x, y, color) {
 function drawPieces() {
 
     all.forEach(one => {
+        // console.log(one.x)
+        one.free = true  
+        one.move = true
+        one.moveRight = true
+        one.moveDown = true
+
         one.piece[one.direction].forEach((row, i) => {
             row.forEach((col, j) => {
                 if (col === 1) 
                 {
+
+                    // detectCollision()
+                    if(j*block + one.x === 0)
+                    {
+                        one.move = false
+                    }
+                    if(j*block + one.x === canvas.width - 20)
+                    {
+                        one.moveRight = false
+                    }
+                    if(i*block + one.y === canvas.height - 20)
+                    {
+                        one.moveDown = false
+                        one.move = false
+                        one.moveRight = false
+                        if(!one.samePiece)
+                        {
+                            addPiece()
+                            one.samePiece = true
+
+                        }
+                        
+                    }
+
+
                     fillBlock( j*block + one.x, i*block + one.y, one.color)
                 }
 
@@ -42,7 +73,10 @@ function drawPieces() {
     })
 }
 
+function detectCollision()
+{
 
+}
 // Function that adds gamePiece to board
 function addPiece() {
     let piece = randomElement()
@@ -60,74 +94,56 @@ function addPiece() {
 
 // Function has last game piece drops
 setInterval(() => {
-    all[0].y += 20 
-
-}, 1000)
-
-function detectCollision(controlDirection){
-
-    console.log(all[0].x, canvas.width)
-    let leftSide = all[0].x + all[0].piece[all[0].piece.length-1][0].left
-    let rightSide = all[0].x + all[0].piece[all[0].piece.length-1][0].right
-    let bottomSide = all[0].y + all[0].piece[all[0].piece.length-1][0].bottom
-    let topSide = all[0].x + all[0].piece[all[0].piece.length-1][0].top
-   
-    switch (controlDirection) {
-        case "ArrowLeft":
-            if(leftSide - 20 >= 0){
-                all[0].x -= 20
-            }
-            break
-        case "ArrowRight":
-            if(rightSide + 20 <= canvas.width){
-                all[0].x += 20
-            }
-            break
-        case "ArrowUp":
-            break
-        case "ArrowDown":
-            if(bottomSide + 20 <= canvas.height){
-                all[0].y += 20
-            }
-            break
+    if(all[0].moveDown)
+    {
+        all[0].y += 20
     }
-    
-}
+     
+
+}, 5000)
+
 
 //Keyboard controls
 document.addEventListener('keydown', function (event) {
 
     switch (event.key) {
         case "ArrowLeft":
-           detectCollision(event.key)
-           if(all[0].x - 20 >= 0) 
+          
+           if(all[0].move) 
            {
                all[0].x -= 20
            }
             break
         case "ArrowRight":
-            detectCollision(event.key)
-            if(all[0].x + 20 <= canvas.width)
+            if(all[0].moveRight) 
             {
+
                 all[0].x += 20
-            }   
+
+            }
             break
         case "ArrowUp":
-            if(all[0].direction + 1 < all[0].piece.length){
-                all[0].direction++
-            }
-            else{
-                all[0].direction = 0
+            if(all[0].move && all[0].moveRight && all[0].moveDown)
+            {
+                if(all[0].direction >= all[0].piece.length-1)
+                {
+                    all[0].direction = 0
+                }
+                else
+                {
+                    all[0].direction++
+                }
             }
             break
         case "ArrowDown":
-            detectCollision(event.key)
-            all[0].y += 20
+            if(all[0].moveDown)
+            {
+                all[0].y += 20
+            }
             break
-        case " ":
+        
     }
 })
-
 
 addPiece()
 //Game Engine .... Loops forever and draws everything 
