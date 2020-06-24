@@ -36,7 +36,7 @@ function drawPieces() {
         one.move = true
         one.moveRight = true
         one.moveDown = true
-
+        
         one.piece[one.direction].forEach((row, i) => {
             row.forEach((col, j) => {
                 if (col === 1) 
