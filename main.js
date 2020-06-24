@@ -1,5 +1,4 @@
 // Global Variables
-
 const canvas = document.querySelector('#canvas')
 const ctx = canvas.getContext("2d")
 
@@ -10,6 +9,7 @@ const all = [] // array of objects
 const PIECES = 
 {
     shape: [Z, S, T, J, L, I, O],
+    shapeType: ['Z', 'S', 'T', 'J', 'L', 'I', 'O'],
     color: "#" + ((1 << 24) * Math.random() | 0).toString(16)
 }
 
@@ -43,8 +43,6 @@ function drawPieces() {
 }
 
 
-
-
 // Function that adds gamePiece to board
 function addPiece() {
     let piece = randomElement()
@@ -66,25 +64,49 @@ setInterval(() => {
 
 }, 1000)
 
+function detectCollision(controlDirection){
 
-function detectCollision(){
-    all.forEach(one =>{
-
-
-    })
+    console.log(all[0].x, canvas.width)
+    let leftSide = all[0].x + all[0].piece[all[0].piece.length-1][0].left
+    let rightSide = all[0].x + all[0].piece[all[0].piece.length-1][0].right
+    let bottomSide = all[0].y + all[0].piece[all[0].piece.length-1][0].bottom
+    let topSide = all[0].x + all[0].piece[all[0].piece.length-1][0].top
+   
+    switch (controlDirection) {
+        case "ArrowLeft":
+            if(leftSide - 20 >= 0){
+                all[0].x -= 20
+            }
+            break
+        case "ArrowRight":
+            if(rightSide + 20 <= canvas.width){
+                all[0].x += 20
+            }
+            break
+        case "ArrowUp":
+            break
+        case "ArrowDown":
+            if(bottomSide + 20 <= canvas.height){
+                all[0].y += 20
+            }
+            break
+    }
+    
 }
 
 //Keyboard controls
 document.addEventListener('keydown', function (event) {
-    
+
     switch (event.key) {
         case "ArrowLeft":
+           detectCollision(event.key)
            if(all[0].x - 20 >= 0) 
            {
                all[0].x -= 20
            }
             break
         case "ArrowRight":
+            detectCollision(event.key)
             if(all[0].x + 20 <= canvas.width)
             {
                 all[0].x += 20
@@ -99,11 +121,13 @@ document.addEventListener('keydown', function (event) {
             }
             break
         case "ArrowDown":
+            detectCollision(event.key)
             all[0].y += 20
             break
         case " ":
     }
 })
+
 
 addPiece()
 //Game Engine .... Loops forever and draws everything 

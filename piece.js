@@ -89,6 +89,7 @@ const J = [
     [1, 0, 0],
     [1, 1, 1],
   ],
+  
 ];
 
 const L = [
@@ -112,6 +113,32 @@ const L = [
     [0, 0, 1],
     [1, 1, 1],
   ],
+  [
+    {
+      left: 20,
+      right: 0,
+      bottom: 0,
+      top: 0
+    },
+    {
+      left: 0,
+      right: 20,
+      bottom: 0,
+      top: 0
+    },
+    {
+      left: 20,
+      right: 40,
+      bottom: 0,
+      top: 0
+    },
+    {
+      left: 20,
+      right: 40,
+      bottom: 0,
+      top: 0
+    }
+  ]
 ];
 
 const I = [
@@ -140,11 +167,37 @@ const I = [
     [1, 1, 1, 1],
     [0, 0, 0, 0],
   ],
+  [
+    {
+      left: 20,
+      right: 40,
+      bottom: 80,
+      top: 0
+    },
+    {
+      left: 0,
+      right: 0,
+      bottom: 20,
+      top: 40
+    },
+    {
+      left: 40,
+      right: 60,
+      bottom: 0,
+      top: 0
+    },
+    {
+      left: 0,
+      right: 0,
+      bottom: 40,
+      top: 20
+    }
+  ]
 ];
 
 
 const O = [
-  
+
     [
       [1, 1]
       [1, 1]
