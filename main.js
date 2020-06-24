@@ -29,6 +29,7 @@ function fillBlock(x, y, color) {
 // Function that creates the game piece shapes: if column index === 1 then fillBlock()
 function drawPieces() {
 
+    
     all.forEach(one => {
         // console.log(one.x)
         one.free = true  
@@ -40,8 +41,48 @@ function drawPieces() {
             row.forEach((col, j) => {
                 if (col === 1) 
                 {
+                    if(one.current){
 
-                    // detectCollision()
+                        let allOthers = [...all]
+                        allOthers.shift()
+                        // console.log(allOthers)
+                    
+                        // detectCollision()
+                        allOthers.forEach(other => {
+                            other.piece[other.direction].forEach((r,it) =>
+                            {
+                                r.forEach((c,jk)=>
+                                {
+                                    if(c === 1)
+                                    {
+                                        if(j*block + one.x === other.x + jk*block)
+                                        {
+                                            // console.log(j*block + one.x , other.x + jk*block)
+                                            one.move = false
+                                        }
+                                        if(i*block + one.y === other.y + jk*block)
+                                        {
+                                            one.moveDown = false
+                                            one.move = false
+                                            one.moveRight =false
+                                            // one.current = false
+                                            // addPiece()
+                                        
+                                            
+                                        }
+                                        if(j*block + one.x === other.x)
+                                        {
+
+                                            one.moveRight = false
+
+                                        }
+
+                                    }
+
+                                })
+                            })
+                        })
+                    }
                     if(j*block + one.x === 0)
                     {
                         one.move = false
@@ -55,10 +96,10 @@ function drawPieces() {
                         one.moveDown = false
                         one.move = false
                         one.moveRight = false
-                        if(!one.samePiece)
+                        if(one.current)
                         {
                             addPiece()
-                            one.samePiece = true
+                            one.current = false
 
                         }
                         
@@ -82,6 +123,7 @@ function addPiece() {
     let piece = randomElement()
 
     let fullPiece = {
+        current: true,
         piece: piece,
         x: 0,
         y: 0,
