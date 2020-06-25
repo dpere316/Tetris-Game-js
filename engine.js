@@ -103,10 +103,29 @@ function moveDown() {
     
 }
 
-for(let i = 0; i < 15; i++) {
+for(let i = 0; i < 1000; i++) {
     moveDown()
+    console.log(i)
 }
 
+document.addEventListener('keydown', function (event) {
+
+    switch (event.key) {
+        case "ArrowLeft":
+          
+            break
+        case "ArrowRight":
+           
+            break
+        case "ArrowUp":
+           
+            break
+        case "ArrowDown":
+            piece.x = moveDown()
+            break
+        
+    }
+})
 
 //Game Engine .... Loops forever and draws everything 
 function animate() { 
