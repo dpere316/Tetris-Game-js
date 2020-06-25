@@ -11,7 +11,7 @@ const PIECES =
     shape: [Z, S, T, J, L, I, O],
     shapeType: ['Z', 'S', 'T', 'J', 'L', 'I', 'O'],
     color: "#" + ((1 << 24) * Math.random() | 0).toString(16)
-}
+} 
 
 // Function to randomly select game piece
 function randomElement() {
