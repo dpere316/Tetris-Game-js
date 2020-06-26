@@ -7,16 +7,27 @@
     <title>Tetris</title>
 </head>
 <body>
+    <!-- Heading -->
+    <section class = "heading">
+        <div>
+            <h1>TETRIS</h1>
+        </div>
+        <div>
+            <h3>SCORE: <span id= "score">0</span></h3>
+        </div>
+        
+        <div>
+            <button id="start-button">Start</button>
+            <button id="reset-button">Reset</button>
+            <button id="audio-button">⏯</button>
+        </div>
 
-    <h1>TETRIS</h1>
-    <h3>SCORE: <span id= "score">0</span></h3>
-    <div>
-        <button id="start-button">Start</button>
-        <button id="reset-button">Reset</button>
-        <button id="audio-button">⏯</button>
-    </div>
-    
+    </section>
 
+<!-- Game body -->
+
+    <section class="main">
+        
     <div class="grid">
     <div></div>
     <div></div>
@@ -231,7 +242,20 @@
     <div class="filled"></div>
     </div>
 
-    
+    <div id="instructions">
+        <h5>
+            How to Play:
+        </h5>
+        
+        <p>
+            Use arrow keys to move blocks around.
+        
+        </p>
+
+    </div>
+
+</section>
+
     
 </body>
 <script src="piece.js"></script>
