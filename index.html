@@ -1,66 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tetris</title>
     <link rel="stylesheet" href="style.css">
+    <title>Tetris</title>
 </head>
-
 <body>
-    <!-- Main Heading -->
-    <section id="title">
-        <div id="color-overlay">
-            <h1 id="border">TETRIS</h1>
-        </div>
 
-    </section>
+    <h1>Tetris</h1>
+    <h3>Score: <span id= "score">0</span></h3>
+    <button id="start-button">Start</button>
+
+    <div class="grid">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <!-- Bottom of the grid -->
+    <div class="filled"></div>
+    <div class="filled"></div>
+    <div class="filled"></div>
+    <div class="filled"></div>
+    <div class="filled"></div>
+    <div class="filled"></div>
+    <div class="filled"></div>
+    <div class="filled"></div>
+    <div class="filled"></div>
+    <div class="filled"></div>
+    </div>
 
 
-    <!--Game info  -->
-    <section id="gameInfo">
-        <div>
-            <button>Play</button>
-            <button>Reset</button>
-        </div>
-        
-        <div>
-            <span>Score:</span>
-            <div>
-                <span>00000</span>
-            </div>
-        </div>
-
-        <div>
-            <span>Level:</span>
-            <div>
-                <span>00000</span>
-            </div>
-        </div>
-
-        <div>
-            <span>Lines:</span>
-            <div>
-                <span>00000</span>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Canvas -->
-    <section id="gameboard">
-        <div>
-            <canvas id = "canvas" width="200" height="320"></canvas>
-        </div>
-    </section>
-
-    <script src="piece.js"> </script>
     
-    <!-- <script src="main.js"></script> -->
-    <script src="main.js"></script>
-    <script src="styleAnimations.js"> </script>
-
 </body>
-
+<script src="piece.js"></script>
+<script src="script.js"></script>
 </html>
