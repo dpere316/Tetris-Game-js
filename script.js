@@ -1,16 +1,20 @@
-// document.addEventListener('DOMContentLoaded', () => {
 
     const grid = document.querySelector('.grid')
     let blocks = Array.from(document.querySelectorAll('.grid div')) // each div gets an index number
     const scoreDisplay = document.querySelector('#score')
+    const reset = document.querySelector('#reset-button')
     const start = document.querySelector('#start-button')
+    const audio = document.querySelector('#audio-button')
+    const sound = new Audio('audio/tetris_theme_a.mp3')
+    sound.volume = 0.1
+    // sound.play()
     
     let score = 0
     const pieces = [l,z,t,o,i] // Array of all the pieces
 
     let timerId;
 
-    let currentPos = 4 // position of the piece across the grid
+    let currentPos = 1// position of the piece across the grid
     let direction = 0 // rotation of the piece
 
     let randomPiece = Math.floor(Math.random()*pieces.length) // returns index of a random piece from the pieces Array
@@ -22,6 +26,7 @@
         currentPiece.forEach( val =>{
             blocks[currentPos + val].classList.add('tetromino')
             blocks[currentPos + val].style.backgroundColor = colors[randomPiece]
+            
         })
     }
 
@@ -32,6 +37,7 @@
             {
                 blocks[currentPos + val].classList.remove('tetromino')
                 blocks[currentPos + val].style.backgroundColor = ''
+               
             })
     }
 
@@ -125,6 +131,32 @@
               timerId = setInterval(moveDown,1000)
           }
       })
+      
+      audio.onclick = play
+
+      function play(){
+
+            sound.currentTime = 0
+            sound.play()
+            audio.onclick = mute
+            console.log('play')
+          
+        }
+        
+        function mute(){
+            sound.pause()
+            audio.onclick = play
+            console.log('mute')
+          
+        }
+     
+
+
+      reset.addEventListener('click',() =>
+      {
+          location.reload()
+      })
+    
 
     //   Clear rows & add score
        function addScore()
@@ -139,8 +171,9 @@
                    row.forEach(val => {
                        blocks[val].classList.remove('filled')
                        blocks[val].classList.remove('tetromino')
-                       blocks[currentPos + val].style.backgroundColor = ''
+                       blocks[val].style.backgroundColor = ''
                        
+                      
                    })
                    const clear = blocks.splice(i,width)
                    blocks = clear.concat(blocks)
@@ -160,5 +193,5 @@
 
        
 
-// })
+
 

@@ -11,10 +11,20 @@ body{
     justify-content: center;
     flex-direction: column;
     transform-origin: top center;
-    transform: scale(1.4);
+    transform: scale(1.5);
     overflow: hidden;
+    background-color: rebeccapurple;
     
 }
+h1{
+    font-family: Aerologica;
+    color: black;
+}
+
+h3{
+    font-family: Aerologica;
+}
+
 
 .grid{
     width: 200px;
@@ -24,6 +34,7 @@ body{
     background: #f0f0f0;
     background-image: linear-gradient(#d0d0d0, #f0f0f0);
     border-radius: 5px;
+    
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
     
 }
@@ -32,6 +43,10 @@ body{
     height: 20px;
     width: 20px;
     
+    
+}
+button{
+    margin-bottom: 5px;
 }
 
 .tetromino{

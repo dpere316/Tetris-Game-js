@@ -1,7 +1,7 @@
 // Game Piece
 const width = 10 // the size of each block on grid
 
-const colors = ['red','green','blue','teal','orange']
+  const colors = ['red','teal','orange','green','blue']
 
 const l = [
   [1,width+1, width*2+1,2],
