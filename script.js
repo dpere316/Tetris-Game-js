@@ -21,6 +21,7 @@
     function draw(){
         currentPiece.forEach( val =>{
             blocks[currentPos + val].classList.add('tetromino')
+            blocks[currentPos + val].style.backgroundColor = colors[randomPiece]
         })
     }
 
@@ -30,6 +31,7 @@
         currentPiece.forEach(val =>
             {
                 blocks[currentPos + val].classList.remove('tetromino')
+                blocks[currentPos + val].style.backgroundColor = ''
             })
     }
 
@@ -137,6 +139,7 @@
                    row.forEach(val => {
                        blocks[val].classList.remove('filled')
                        blocks[val].classList.remove('tetromino')
+                       blocks[currentPos + val].style.backgroundColor = ''
                        
                    })
                    const clear = blocks.splice(i,width)
