@@ -7,7 +7,7 @@
 
 body{
     transform-origin: top center;
-    transform: scale(1.5);
+    transform: scale(1.2);
     overflow: hidden;
     background-color: rebeccapurple;
     
@@ -61,7 +61,7 @@ button{
 }
 
 .tetromino{
-
+    
     background-color:blue;
 
 }
