@@ -93,7 +93,7 @@
     {
         erase()
         direction++
-        if(direction === currentPiece.length)
+        if(direction === pieces[randomPiece].length)
         {
             direction = 0
         }
